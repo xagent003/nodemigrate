@@ -22,7 +22,7 @@ const (
 
 func SetKubeInterface(ifName, version string) error {
 	kubeIfFile := "kube_interface_v" + version
-	ifData := "V" + version + "_INTERFACE " + ifName
+	ifData := "V" + version + "_INTERFACE " + ifName + "\n"
 	ifDataBytes := []byte(ifData)
 
 	if _, err := os.Stat(VarOptPf9); os.IsNotExist(err) {
